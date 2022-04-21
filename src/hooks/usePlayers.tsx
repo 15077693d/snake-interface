@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Rect } from "react-konva";
 import { DataType, PlayerType } from "../types";
 import { io, Socket } from "socket.io-client";
 import { SNAKE_CONSTANTS } from "../constants";
@@ -39,19 +38,5 @@ export const usePlayers = (socket: Socket) => {
       socket.removeListener("fetch");
     };
   }, []);
-  console.log(players);
-  return (
-    <>
-      {Object.entries(players || {}).map(([id, player]) => (
-        <Rect
-          key={`${id}_player_rect`}
-          x={player.x}
-          y={player.y}
-          width={SNAKE_CONSTANTS.width}
-          height={SNAKE_CONSTANTS.height}
-          fill="red"
-        />
-      ))}
-    </>
-  );
+  return <></>;
 };
