@@ -39,7 +39,6 @@ export const usePlayers = (socket: Socket) => {
       socket.removeListener("fetch");
     };
   }, []);
-  console.log(players);
   return (
     <>
       {Object.entries(players || {}).map(([id, player]) => (
